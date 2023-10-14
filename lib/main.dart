@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/ui/home/Widgets.dart';
 import 'package:learn_flutter/ui/home/animations.dart';
@@ -31,11 +32,13 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [
-    const Widgets(),
-    const Animations(),
-    const Projects()
-  ];
+   List<Widget> _children = [];
+
+ @override
+  void initState() {
+    super.initState();
+    _children..add(Widgets(context))..add(Animations())..add(Projects());
+  }
 
   final List<BottomNavigationBarItem> _list = <BottomNavigationBarItem>[
     const BottomNavigationBarItem(
@@ -72,6 +75,7 @@ class _MainPageState extends State<MainPage> {
         selectedFontSize: 23,
         unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w300),
         selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
+
       ),
       body: IndexedStack(
         index: _currentIndex,

@@ -24,13 +24,17 @@ import '../widget/ProgressBarWidget.dart';
 import '../widget/TextWidget.dart';
 
 class Widgets extends StatefulWidget {
-  const Widgets({super.key});
+  final parentContext;
+
+  Widgets(this.parentContext, {super.key});
 
   @override
   State<Widgets> createState() => _WidgetsState();
 }
 
 class _WidgetsState extends State<Widgets> {
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,13 +43,15 @@ class _WidgetsState extends State<Widgets> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WidgetHome(),
+      home:  WidgetHome(widget.parentContext),
     );
   }
 }
 
 class WidgetHome extends StatefulWidget {
-  const WidgetHome({super.key});
+   WidgetHome(this.parentContext, {super.key});
+  final parentContext;
+
 
   @override
   State<WidgetHome> createState() => _WidgetHomeState();
@@ -67,7 +73,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Column'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const ColumnWidget(title: 'Column'),
@@ -78,7 +84,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Rom'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const RowWidget(title: 'Row'),
@@ -89,7 +95,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Flex Expanded'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const FlexWidget(title: 'Flex Expanded'),
@@ -100,7 +106,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Wrap'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const WrapWidget(title: 'Wrap'),
@@ -111,7 +117,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Stack'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const StackWidget(title: 'Stack'),
@@ -122,7 +128,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Padding and Margin'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const PaddingWidget(title: 'Padding and Margin'),
@@ -137,7 +143,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Button'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const ButtonWidget(title: 'Button'),
@@ -148,7 +154,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Image'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const ImageWidget(title: 'Image'),
@@ -159,7 +165,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Text'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const TextWidget(title: 'Text'),
@@ -170,7 +176,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'TextField'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const TextFieldWidget(title: 'TextField'),
@@ -181,7 +187,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'AppBar'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const AppBarWidget(title: 'AppBar'),
@@ -192,7 +198,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Tabs'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const TabsWidget(title: 'Tabs'),
@@ -203,7 +209,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Drawer'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const DrawerWidget(title: 'Drawer'),
@@ -214,7 +220,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'BottomSheet'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const BottomSheetWidget(title: 'BottomSheet'),
@@ -225,7 +231,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Dialog'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const DialogWidget(title: 'Dialog'),
@@ -236,7 +242,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'ProgressBar'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const ProgressBarWidget(title: 'ProgressBar'),
@@ -247,7 +253,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'SnackBar'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const SnackBarWidget(title: 'SnackBar'),
@@ -258,7 +264,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Radio'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const RadioWidget(title: 'Radio'),
@@ -269,7 +275,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Switch'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const SwitchWidget(title: 'Switch'),
@@ -280,7 +286,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'CheckBox'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   MaterialPageRoute(
                     builder: (BuildContext context) =>
                         const CheckBoxWidget(title: 'CheckBox'),
@@ -291,7 +297,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             title: const WidgetsListItem(title: 'Slide'),
             onTap: () {
               Navigator.push(
-                  context,
+                  widget.parentContext,
                   CupertinoPageRoute(
                     builder: (BuildContext context) =>
                         const SliderWidget(title: 'Slide'),
