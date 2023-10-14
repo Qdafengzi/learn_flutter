@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
  @override
   void initState() {
     super.initState();
-    _children..add(Widgets(context))..add(Animations())..add(Projects());
+    _children..add(Widgets(context))..add(Animations(context))..add(Projects(context));
   }
 
   final List<BottomNavigationBarItem> _list = <BottomNavigationBarItem>[

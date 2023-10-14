@@ -26,7 +26,7 @@ import '../widget/TextWidget.dart';
 class Widgets extends StatefulWidget {
   final parentContext;
 
-  Widgets(this.parentContext, {super.key});
+ const  Widgets(this.parentContext, {super.key});
 
   @override
   State<Widgets> createState() => _WidgetsState();
@@ -34,11 +34,10 @@ class Widgets extends StatefulWidget {
 
 class _WidgetsState extends State<Widgets> {
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Learning',
+      title: 'Flutter Learning Widget',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -49,7 +48,7 @@ class _WidgetsState extends State<Widgets> {
 }
 
 class WidgetHome extends StatefulWidget {
-   WidgetHome(this.parentContext, {super.key});
+   const WidgetHome(this.parentContext, {super.key});
   final parentContext;
 
 
@@ -70,7 +69,7 @@ class _WidgetHomeState extends State<WidgetHome> {
         padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
         children: <Widget>[
           ListTile(
-            title: const WidgetsListItem(title: 'Column'),
+            title: const FListItem(title: 'Column'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -81,7 +80,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Rom'),
+            title: const FListItem(title: 'Rom'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -92,7 +91,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Flex Expanded'),
+            title: const FListItem(title: 'Flex Expanded'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -103,7 +102,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Wrap'),
+            title: const FListItem(title: 'Wrap'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -114,7 +113,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Stack'),
+            title: const FListItem(title: 'Stack'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -125,7 +124,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Padding and Margin'),
+            title: const FListItem(title: 'Padding and Margin'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -136,11 +135,11 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'List'),
+            title: const FListItem(title: 'List'),
             onTap: () {},
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Button'),
+            title: const FListItem(title: 'Button'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -151,7 +150,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Image'),
+            title: const FListItem(title: 'Image'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -162,7 +161,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Text'),
+            title: const FListItem(title: 'Text'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -173,7 +172,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'TextField'),
+            title: const FListItem(title: 'TextField'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -184,7 +183,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'AppBar'),
+            title: const FListItem(title: 'AppBar'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -195,7 +194,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Tabs'),
+            title: const FListItem(title: 'Tabs'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -206,7 +205,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Drawer'),
+            title: const FListItem(title: 'Drawer'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -217,7 +216,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'BottomSheet'),
+            title: const FListItem(title: 'BottomSheet'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -228,7 +227,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Dialog'),
+            title: const FListItem(title: 'Dialog'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -239,7 +238,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'ProgressBar'),
+            title: const FListItem(title: 'ProgressBar'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -250,7 +249,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'SnackBar'),
+            title: const FListItem(title: 'SnackBar'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -261,7 +260,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Radio'),
+            title: const FListItem(title: 'Radio'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -272,7 +271,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Switch'),
+            title: const FListItem(title: 'Switch'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -283,7 +282,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'CheckBox'),
+            title: const FListItem(title: 'CheckBox'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -294,7 +293,7 @@ class _WidgetHomeState extends State<WidgetHome> {
             },
           ),
           ListTile(
-            title: const WidgetsListItem(title: 'Slide'),
+            title: const FListItem(title: 'Slide'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,

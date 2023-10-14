@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class WidgetsListItem extends StatefulWidget {
-  const WidgetsListItem({super.key, required this.title});
+class FListItem extends StatefulWidget {
+  const FListItem({super.key, required this.title});
 
   final String title;
 
   @override
-  State<WidgetsListItem> createState() => _WidgetsListItemState();
+  State<FListItem> createState() => _FListItemState();
 }
 
-class _WidgetsListItemState extends State<WidgetsListItem> {
+class _FListItemState extends State<FListItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
