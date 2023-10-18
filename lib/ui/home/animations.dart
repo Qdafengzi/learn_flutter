@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/ui/animation/AnimationWidget.dart';
 import 'package:learn_flutter/ui/widget/FlexWidget.dart';
 import 'package:learn_flutter/ui/widget/PaddingWidget.dart';
 import 'package:learn_flutter/ui/widget/RowWidget.dart';
@@ -61,6 +62,20 @@ class _AnimationHomeState extends State<AnimationHome> {
                     builder: (BuildContext context) =>
                         // const WrapWidget(title: 'Canvas'),
                         const CanvasWidget(title: 'Canvas'),
+                  ));
+            },
+          ),
+
+
+          ListTile(
+            title: const FListItem(title: 'Animation'),
+            onTap: () {
+              Navigator.push(
+                  widget.parentContext,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                    // const WrapWidget(title: 'Canvas'),
+                    const AnimationWidget(title: 'Animation'),
                   ));
             },
           ),
