@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"
+  />
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://cdn.amazeui.org/amazeui/2.5.0/js/amazeui.min.js"></script>
+  <script type="text/javascript">
+    function CallJsNoResult(msg) {
+      alert(msg);
+    }
+    function CallJs(msg) {
+      alert(msg);
+      return FlutterToast.postMessage("CallJs后有返回值 FlutterToast.postMessage");
+    }
+
+    function call_flutter() {
+      js_call_flutter.postMessage("Hello");
+    }
+  </script>
+
+  <body>
+    <style>
+      * {
+        font-size: 20px;
+      }
+    </style>
+    <div>flutter</div>
+    <div>flutter</div>
+    <div>flutter</div>
+    <div>flutter</div>
+    <button onclick="call_flutter()">call_flutter</button>
+  </body>
+</html>

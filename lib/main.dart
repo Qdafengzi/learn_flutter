@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/ui/home/Widgets.dart';
-import 'package:learn_flutter/ui/home/animations.dart';
+import 'package:learn_flutter/ui/home/other.dart';
 import 'package:learn_flutter/ui/home/projects.dart';
 
 import 'constant/HomeCos.dart';
@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
  @override
   void initState() {
     super.initState();
-    _children..add(Widgets(context))..add(Animations(context))..add(Projects(context));
+    _children..add(Widgets(context))..add(Other(context))..add(Projects(context));
   }
 
   final List<BottomNavigationBarItem> _list = <BottomNavigationBarItem>[
@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.animation),
-      label: HomeCos.ANIMATION,
+      label: HomeCos.OTHER,
     ),
     const BottomNavigationBarItem(
       icon: Icon(Icons.pages),
