@@ -13,18 +13,21 @@ class _FListItemState extends State<FListItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: Alignment.centerLeft,
-        // height: 50,
-        margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-        child: Text(
-          widget.title,
-          style:const TextStyle(
-              color: Color(0xFF333333),
-              // color: Colors.black54,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              overflow: TextOverflow.ellipsis,
-          ),
-        ));
+      padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
+      margin: const EdgeInsets.fromLTRB(12, 4, 12, 4),
+      decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: const BorderRadius.all(Radius.circular(4))
+      ),
+      child: Text(
+        widget.title,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
+    );
   }
 }

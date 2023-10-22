@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/ui/other/VideoAndAudioWidget.dart';
 import 'package:learn_flutter/ui/other/WebViewJsWidget.dart';
 import 'package:learn_flutter/ui/other/WebViewWidget.dart';
 import '../../widgets/WidgetsListItem.dart';
 import '../other/AnimationWidget.dart';
 import '../other/CanvasWidget.dart';
+import '../other/LottieWidget.dart';
 
 class Other extends StatefulWidget {
   final parentContext;
@@ -44,13 +46,12 @@ class _OtherHomeState extends State<OtherHome> {
       appBar: AppBar(
         title: const Text("Animation"),
         toolbarHeight: 44,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
         children: <Widget>[
-          ListTile(
-            title: const FListItem(title: 'Canvas'),
+          InkWell(
+            child: const FListItem(title: 'Canvas'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -61,8 +62,8 @@ class _OtherHomeState extends State<OtherHome> {
                   ));
             },
           ),
-          ListTile(
-            title: const FListItem(title: 'Animation'),
+          InkWell(
+            child: const FListItem(title: 'Animation'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -73,8 +74,8 @@ class _OtherHomeState extends State<OtherHome> {
                   ));
             },
           ),
-          ListTile(
-            title: const FListItem(title: 'WebView'),
+          InkWell(
+            child: const FListItem(title: 'WebView'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -85,8 +86,8 @@ class _OtherHomeState extends State<OtherHome> {
                   ));
             },
           ),
-          ListTile(
-            title: const FListItem(title: 'WebViewJs'),
+          InkWell(
+            child: const FListItem(title: 'WebViewJs'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
@@ -94,6 +95,30 @@ class _OtherHomeState extends State<OtherHome> {
                     builder: (BuildContext context) =>
                         // const WrapWidget(title: 'Canvas'),
                         const WebViewJsWidgetPage(title: 'WebViewJs'),
+                  ));
+            },
+          ),
+          InkWell(
+            child: const FListItem(title: 'audio and Video'),
+            onTap: () {
+              Navigator.push(
+                  widget.parentContext,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        // const WrapWidget(title: 'Canvas'),
+                        const VideoAndAudioWidgetPage(title: 'audio and Video'),
+                  ));
+            },
+          ),
+          InkWell(
+            child: const FListItem(title: 'lottie'),
+            onTap: () {
+              Navigator.push(
+                  widget.parentContext,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        // const WrapWidget(title: 'Canvas'),
+                        const LottieWidget(title: 'lottie'),
                   ));
             },
           ),

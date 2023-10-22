@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:learn_flutter/theme/light_theme.dart';
 import 'package:learn_flutter/ui/home/Widgets.dart';
 import 'package:learn_flutter/ui/home/other.dart';
 import 'package:learn_flutter/ui/home/projects.dart';
@@ -15,10 +17,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bottom Navigation',
-      home: const MainPage(),
-      theme: ThemeData(primaryColor: Colors.orange),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.red,//状态栏颜色
+        statusBarIconBrightness: Brightness.dark, //状态栏图标颜色
+        statusBarBrightness: Brightness.dark,  //状态栏亮度
+        systemStatusBarContrastEnforced: true, //系统状态栏对比度强制
+        systemNavigationBarColor: Colors.white, //导航栏颜色
+        systemNavigationBarIconBrightness: Brightness.dark,//导航栏图标颜色
+        systemNavigationBarDividerColor: Colors.white60,//系统导航栏分隔线颜色
+        systemNavigationBarContrastEnforced: true,//系统导航栏对比度强制
+      ),
+      child: MaterialApp(
+        title: 'Bottom Navigation',
+        home: const MainPage(),
+        theme: lightTheme,
+        // darkTheme: darkTheme,
+      ),
     );
   }
 }
@@ -69,8 +84,10 @@ class _MainPageState extends State<MainPage> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: _list,
-        selectedItemColor: Colors.green[900],
-        unselectedItemColor: Colors.green[400],
+        selectedItemColor: const Color(0xff333333),
+        unselectedItemColor: const Color(0xae8c8989),
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
+
         unselectedFontSize: 20,
         selectedFontSize: 23,
         unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w300),

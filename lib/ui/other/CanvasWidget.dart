@@ -3,6 +3,7 @@ import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class CanvasWidget extends StatefulWidget {
   const CanvasWidget({super.key, required this.title});
@@ -16,11 +17,10 @@ class CanvasWidget extends StatefulWidget {
 class _CanvasWidgetState extends State<CanvasWidget> {
   ScrollController controller = ScrollController();
 
-  late ui.Image image;
+  ui.Image? image;
 
   Future<void> loadImage() async {
-    image =
-        await _loadImageByProvider(const AssetImage("images/ic_flutter.png"));
+    image = await _loadImageByProvider(const AssetImage("images/ic_flutter.png"));
     setState(() {});
   }
 
@@ -40,8 +40,8 @@ class _CanvasWidgetState extends State<CanvasWidget> {
 
   @override
   void initState() {
-    super.initState();
     loadImage();
+    super.initState();
   }
 
   @override
@@ -103,7 +103,6 @@ class _CanvasWidgetState extends State<CanvasWidget> {
 
 class CubicPainter extends CustomPainter {
   final Paint _paint = Paint()
-
     ..color = Colors.lightBlue;
 
   var path = Path();
@@ -182,7 +181,7 @@ class PathPainter extends CustomPainter {
 }
 
 class ImagePainter extends CustomPainter {
-  final ui.Image image;
+  final ui.Image? image;
 
   ImagePainter(this.image);
 
@@ -194,17 +193,18 @@ class ImagePainter extends CustomPainter {
         Rect.fromLTWH(0, 0, size.width, size.height), const Radius.circular(4));
     canvas.drawRRect(rect, _paint);
     // 原图片绘制
+    if(image==null) return;
     try {
-      canvas.drawImage(image, Offset.zero, _paint);
+      canvas.drawImage(image!, Offset.zero, _paint);
 
       // 缩小图片尺寸绘制
       var src =
-          Rect.fromLTWH(0, 0, image.width.toDouble(), image.height.toDouble());
+          Rect.fromLTWH(0, 0, image!.width.toDouble(), image!.height.toDouble());
       var dst = const Rect.fromLTWH(150, 0, 70, 70);
-      canvas.drawImageRect(image, src, dst, _paint);
+      canvas.drawImageRect(image!, src, dst, _paint);
       _paint.color = Colors.lightBlue;
     } catch (e) {
-      print(e);
+      Logger().i(e.toString());
     }
   }
 

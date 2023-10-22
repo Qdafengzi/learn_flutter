@@ -46,13 +46,13 @@ class _ProjectHomeState extends State<ProjectHome> {
       appBar: AppBar(
         title: const Text("Projects"),
         toolbarHeight: 44,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Theme.of(context).secondaryHeaderColor,
       ),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
         children: <Widget>[
-          ListTile(
-            title: const FListItem(title: 'Column'),
+          InkWell(
+            child: const FListItem(title: 'Column'),
             onTap: () {
               Navigator.push(
                   widget.parentContext,
